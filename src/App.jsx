@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import './App.css';
+import enemyGif from '../src/assets/enemy.gif';
+import friendGif from '../src/assets/friends.gif';
+import loverGif from '../src/assets/lover.gif';
+import affectionGif from '../src/assets/affection.gif';
+import marriageGif from '../src/assets/marriage.gif';
+import sisterGif from '../src/assets/sister.gif';
 
 function App() {
   const [name, setName] = useState('');
   const [partnerName, setPartnerName] = useState('');
   const [result, setResult] = useState('');
+  const [gif, setGif] = useState('');
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -12,11 +19,43 @@ function App() {
 
     if (count === 0) {
       setResult("FRIENDS");
+      setGif(friendGif);
       return;
     }
 
     const lastElement = determineLastElement(count);
     setResult(lastElement);
+
+    // Set the corresponding GIF based on the result
+    switch (lastElement) {
+      case "FRIENDS":
+        setGif(friendGif);
+        break;
+      case "LOVER":
+        setGif(loverGif);
+        break;
+      case "AFFECTION":
+        setGif(affectionGif);
+        break;
+      case "MARRIAGE":
+        setGif(marriageGif);
+        break;
+      case "ENEMY":
+        setGif(enemyGif);
+        break;
+      case "SISTER":
+        setGif(sisterGif);
+        break;
+      default:
+        setGif(friendGif);
+    }
+  };
+
+  const clearFields = () => {
+    setName('');
+    setPartnerName('');
+    setResult('');
+    setGif('');
   };
 
   const calculateCount = (first, second) => {
@@ -83,9 +122,14 @@ function App() {
               value={partnerName}
               onChange={(e) => setPartnerName(e.target.value)}
             /><br />
-            <button type='submit'>CALCULATE AND FUN!!</button>
+            <div className="button-container">
+              <button type='submit'>CALCULATE AND FUN!!</button>
+              <button type='button' onClick={clearFields}>CLEAR</button>
+            </div>
           </form>
-          {result && <h2>{result}</h2>}
+
+
+          {gif && <img src={gif} alt={result} className="result-gif" />}
         </div>
       </div>
       <div>
