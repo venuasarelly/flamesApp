@@ -83,7 +83,7 @@ function App() {
               value={partnerName}
               onChange={(e) => setPartnerName(e.target.value)}
             /><br />
-            <button type='submit'>CALCULATE AND FUN</button>
+            <button type='submit'>CALCULATE AND FUN!!</button>
           </form>
           {result && <h2>{result}</h2>}
         </div>
