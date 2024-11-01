@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../src/assets/blue-background.jpg');
+  
+  }
+ .mainBar {
+   
+    background-color: rgb(49, 161, 206);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+  height: 270px;
+  position: absolute;
+  left: 320PX;
+ 
+  
+  text-align: center;
+  }
+  .mainBox{
+    position: absolute;
+    top:120px;
+    left: 120px;
+  }
+  h1 {
+    margin-bottom: 20px;
+    color: #aa1d1d;  
+  }
+  
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  .flames-container {
+    position: relative;
+    width: 100%; 
+    overflow: hidden; 
+ 
+    display: flex; 
+    justify-content: center;
+  }
+  
+  .flames-heading {
+    white-space: nowrap; 
+    animation: move 6s ease-in-out infinite alternate; 
+    font-size: 4rem;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(-20%); 
+    }
+    100% {
+      transform: translateX(30%);  
+    }
+  }
+  
+
+  
+  
+  input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  button {
+    background-color: #e70624;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 60%;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
