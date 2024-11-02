@@ -132,9 +132,7 @@ function App() {
           {gif && <img src={gif} alt={result} className="result-gif" />}
         </div>
       </div>
-      <div>
-        <h4>Designed and Developed By Asarelly Venu</h4>
-      </div>
+    
     </>
   );
 }
